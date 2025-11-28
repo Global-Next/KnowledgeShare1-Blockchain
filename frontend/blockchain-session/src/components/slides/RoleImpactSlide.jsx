@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './RoleImpactSlide.css';
 
-const RoleImpactSlide = ({ slide, isActive, animationState }) => {
+const RoleImpactSlide = ({ slide, animationState }) => {
   const [visibleBullets, setVisibleBullets] = useState(0);
 
   useEffect(() => {

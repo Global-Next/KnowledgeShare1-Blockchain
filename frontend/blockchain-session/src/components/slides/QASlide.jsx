@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './QASlide.css';
 
-const QASlide = ({ slide, isActive, animationState }) => {
+const QASlide = ({ slide, animationState }) => {
   const [visibleBullets, setVisibleBullets] = useState(0);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const QASlide = ({ slide, isActive, animationState }) => {
         
         <div className="qa-visual">
           <div className="discussion-icon">💬</div>
-          <div className="interaction-prompt">Let's Discuss!</div>
+          <div className="interaction-prompt">Let&apos;s Discuss!</div>
         </div>
         
         <ul className="qa-list">

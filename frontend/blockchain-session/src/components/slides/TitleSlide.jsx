@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './TitleSlide.css';
 
-const TitleSlide = ({ slide, isActive, animationState }) => {
+const TitleSlide = ({ slide, animationState }) => {
   const [showSubtitle, setShowSubtitle] = useState(false);
   const [showContent, setShowContent] = useState(false);
 

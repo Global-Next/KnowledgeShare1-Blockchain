@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './ConceptSlide.css';
 
-const ConceptSlide = ({ slide, isActive, animationState }) => {
+const ConceptSlide = ({ slide, animationState }) => {
   const [visibleBullets, setVisibleBullets] = useState(0);
   const [showVisual, setShowVisual] = useState(false);
   const [animationPhase, setAnimationPhase] = useState(0);
@@ -67,7 +67,7 @@ const ConceptSlide = ({ slide, isActive, animationState }) => {
               <div className="transformation-arrow">→</div>
               
               <div className="sheet blockchain">
-                <div className="sheet-header">Blockchain "Sheet"</div>
+                <div className="sheet-header">Blockchain &quot;Sheet&quot;</div>
                 <div className="sheet-grid">
                   <div className="cell immutable">
                     <span>Data + Timestamp</span>

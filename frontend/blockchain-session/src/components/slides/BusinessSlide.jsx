@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './BusinessSlide.css';
 
-const BusinessSlide = ({ slide, isActive, animationState }) => {
+const BusinessSlide = ({ slide, animationState }) => {
   const [visibleBullets, setVisibleBullets] = useState(0);
 
   useEffect(() => {

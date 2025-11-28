@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './ProblemSlide.css';
 
-const ProblemSlide = ({ slide, isActive, animationState }) => {
+const ProblemSlide = ({ slide, animationState }) => {
   const [visibleBullets, setVisibleBullets] = useState(0);
   const [showVisual, setShowVisual] = useState(false);
 
@@ -111,7 +111,7 @@ const ProblemSlide = ({ slide, isActive, animationState }) => {
             <div className="social-feed">
               <div className="post negative">
                 <div className="user">😟 Pet Owner</div>
-                <div className="content">Found something weird in my dog's food... 😰</div>
+                <div className="content">Found something weird in my dog&apos;s food... 😰</div>
                 <div className="engagement">💬 45 🔄 23 ❤️ 12</div>
               </div>
               <div className="spreading-effect">

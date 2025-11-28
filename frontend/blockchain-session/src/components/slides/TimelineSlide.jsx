@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './TimelineSlide.css';
 
-const TimelineSlide = ({ slide, isActive, animationState }) => {
+const TimelineSlide = ({ slide, animationState }) => {
   const [visiblePhases, setVisiblePhases] = useState(0);
 
   useEffect(() => {

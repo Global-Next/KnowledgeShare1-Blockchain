@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './BeforeAfterSlide.css';
 
-const BeforeAfterSlide = ({ slide, isActive, animationState }) => {
+const BeforeAfterSlide = ({ slide, animationState }) => {
   const [showBefore, setShowBefore] = useState(false);
   const [showAfter, setShowAfter] = useState(false);
   const [visibleBullets, setVisibleBullets] = useState(0);

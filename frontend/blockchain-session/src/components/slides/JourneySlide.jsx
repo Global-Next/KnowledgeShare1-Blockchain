@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './JourneySlide.css';
 
-const JourneySlide = ({ slide, isActive, animationState }) => {
+const JourneySlide = ({ slide, animationState }) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [showTimeline, setShowTimeline] = useState(false);
   const [visibleBullets, setVisibleBullets] = useState(0);

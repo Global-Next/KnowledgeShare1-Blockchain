@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './ProcessSlide.css';
 
-const ProcessSlide = ({ slide, isActive, animationState }) => {
+const ProcessSlide = ({ slide, animationState }) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [visibleBullets, setVisibleBullets] = useState(0);
 

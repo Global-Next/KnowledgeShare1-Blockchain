@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 import './TransformationSlide.css';
 
-const TransformationSlide = ({ slide, isActive, animationState }) => {
+const TransformationSlide = ({ slide, animationState }) => {
   const [visibleBullets, setVisibleBullets] = useState(0);
   const [showTransformation, setShowTransformation] = useState(false);
-  const [animationPhase, setAnimationPhase] = useState(0);
 
   useEffect(() => {
     if (animationState === 'active') {
@@ -16,19 +15,12 @@ const TransformationSlide = ({ slide, isActive, animationState }) => {
         }, 800 + (index * 400))
       );
 
-      // Animation phases for visual
-      const phaseTimer = setInterval(() => {
-        setAnimationPhase(prev => (prev + 1) % 3);
-      }, 2000);
-      
       return () => {
         timers.forEach(clearTimeout);
-        clearInterval(phaseTimer);
       };
     } else {
       setVisibleBullets(0);
       setShowTransformation(false);
-      setAnimationPhase(0);
     }
   }, [animationState, slide.bullets]);
 
