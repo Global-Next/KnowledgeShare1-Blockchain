@@ -1,0 +1,412 @@
+/* SlideRenderer Component Styles */
+
+.slide-renderer {
+  width: 100%;
+  max-width: 1400px;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+  margin: 2rem auto;
+}
+
+.slide-renderer.entering {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.slide-renderer.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.slide-renderer.exiting {
+  opacity: 0;
+  transform: scale(1.05);
+}
+
+/* Base slide styles - GlobalNext Brand */
+.slide-renderer > div {
+  width: 100%;
+  max-width: 1400px;
+  min-height: 85vh;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: var(--shadow-heavy);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(110, 197, 194, 0.2);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Slide type specific styling - GlobalNext Brand Colors */
+.slide-renderer.titleslide > div {
+  background: var(--gradient-hero);
+  color: var(--gn-ink);
+}
+
+.slide-renderer.problemslide > div {
+  background: linear-gradient(135deg, rgba(197, 124, 163, 0.15) 0%, rgba(140, 61, 104, 0.1) 100%);
+  color: var(--gn-ink);
+}
+
+.slide-renderer.conceptslide > div {
+  background: linear-gradient(135deg, rgba(110, 197, 194, 0.15) 0%, rgba(159, 240, 255, 0.1) 100%);
+  color: var(--gn-ink);
+}
+
+.slide-renderer.journeyslide > div {
+  background: linear-gradient(135deg, rgba(110, 197, 194, 0.12) 0%, rgba(197, 124, 163, 0.08) 100%);
+  color: var(--gn-ink);
+}
+
+.slide-renderer.transformationslide > div {
+  background: linear-gradient(135deg, rgba(197, 124, 163, 0.12) 0%, rgba(110, 197, 194, 0.08) 100%);
+  color: var(--gn-ink);
+}
+
+.slide-renderer.businessslide > div {
+  background: linear-gradient(135deg, rgba(110, 197, 194, 0.1) 0%, rgba(159, 240, 255, 0.08) 100%);
+  color: var(--gn-ink);
+}
+
+.slide-renderer.roleimpactslide > div {
+  background: linear-gradient(135deg, rgba(197, 124, 163, 0.1) 0%, rgba(110, 197, 194, 0.08) 100%);
+  color: var(--gn-ink);
+}
+
+.slide-renderer.timelineslide > div {
+  background: linear-gradient(135deg, rgba(110, 197, 194, 0.1) 0%, rgba(159, 240, 255, 0.08) 100%);
+  color: var(--gn-ink);
+}
+
+.slide-renderer.teamslide > div {
+  background: linear-gradient(135deg, rgba(197, 124, 163, 0.12) 0%, rgba(140, 61, 104, 0.08) 100%);
+  color: var(--gn-ink);
+}
+
+.slide-renderer.actionslide > div {
+  background: linear-gradient(135deg, rgba(110, 197, 194, 0.15) 0%, rgba(159, 240, 255, 0.1) 100%);
+  color: var(--gn-ink);
+}
+
+.slide-renderer.qaslide > div {
+  background: linear-gradient(135deg, rgba(110, 197, 194, 0.08) 0%, rgba(197, 124, 163, 0.06) 100%);
+  color: var(--gn-ink);
+}
+
+/* Common slide content styling */
+.slide-content {
+  padding: 3rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.slide-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.slide-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+}
+
+.slide-subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  text-align: center;
+  opacity: 0.9;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Bullet lists */
+.bullet-list,
+.concept-list,
+.problem-list,
+.journey-steps,
+.transformation-list,
+.business-list,
+.impact-list,
+.team-list,
+.action-list,
+.qa-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bullet-item,
+.concept-item,
+.problem-item,
+.step-item,
+.transformation-item,
+.business-item,
+.impact-item,
+.team-item,
+.action-item,
+.qa-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.5s ease;
+}
+
+.bullet-item.visible,
+.concept-item.visible,
+.problem-item.visible,
+.step-item.visible,
+.transformation-item.visible,
+.business-item.visible,
+.impact-item.visible,
+.team-item.visible,
+.action-item.visible,
+.qa-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Bullet icons */
+.bullet-bullet,
+.concept-bullet,
+.problem-icon,
+.step-indicator,
+.transformation-bullet,
+.business-bullet,
+.impact-bullet,
+.team-bullet,
+.action-bullet,
+.qa-bullet {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Text content */
+.bullet-text,
+.concept-text,
+.problem-text,
+.step-content,
+.transformation-text,
+.business-text,
+.impact-text,
+.team-text,
+.action-text,
+.qa-text {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .slide-content {
+    padding: 2rem;
+  }
+  
+  .slide-title {
+    font-size: 2rem;
+  }
+  
+  .slide-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .bullet-text,
+  .concept-text,
+  .problem-text,
+  .step-content,
+  .transformation-text,
+  .business-text,
+  .impact-text,
+  .team-text,
+  .action-text,
+  .qa-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide-content {
+    padding: 1.5rem;
+  }
+  
+  .slide-title {
+    font-size: 1.8rem;
+  }
+  
+  .slide-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .bullet-item,
+  .concept-item,
+  .problem-item,
+  .step-item,
+  .transformation-item,
+  .business-item,
+  .impact-item,
+  .team-item,
+  .action-item,
+  .qa-item {
+    padding: 0.75rem;
+    gap: 0.75rem;
+  }
+  
+  .bullet-bullet,
+  .concept-bullet,
+  .problem-icon,
+  .step-indicator,
+  .transformation-bullet,
+  .business-bullet,
+  .impact-bullet,
+  .team-bullet,
+  .action-bullet,
+  .qa-bullet {
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+  }
+  
+  .bullet-text,
+  .concept-text,
+  .problem-text,
+  .step-content,
+  .transformation-text,
+  .business-text,
+  .impact-text,
+  .team-text,
+  .action-text,
+  .qa-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-content {
+    padding: 1rem;
+  }
+  
+  .slide-title {
+    font-size: 1.5rem;
+  }
+  
+  .slide-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .bullet-item,
+  .concept-item,
+  .problem-item,
+  .step-item,
+  .transformation-item,
+  .business-item,
+  .impact-item,
+  .team-item,
+  .action-item,
+  .qa-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .bullet-bullet,
+  .concept-bullet,
+  .problem-icon,
+  .step-indicator,
+  .transformation-bullet,
+  .business-bullet,
+  .impact-bullet,
+  .team-bullet,
+  .action-bullet,
+  .qa-bullet {
+    align-self: center;
+  }
+}
+
+/* Animation effects */
+.slide-renderer {
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Focus and accessibility */
+.slide-renderer:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+/* Print styles */
+@media print {
+  .slide-renderer > div {
+    background: white !important;
+    color: black !important;
+    box-shadow: none;
+    border: 2px solid #ccc;
+  }
+  
+  .slide-title,
+  .slide-subtitle {
+    color: black !important;
+    text-shadow: none;
+  }
+  
+  .bullet-item,
+  .concept-item,
+  .problem-item,
+  .step-item,
+  .transformation-item,
+  .business-item,
+  .impact-item,
+  .team-item,
+  .action-item,
+  .qa-item {
+    background: #f8f9fa !important;
+    border: 1px solid #dee2e6 !important;
+    color: black !important;
+  }
+}

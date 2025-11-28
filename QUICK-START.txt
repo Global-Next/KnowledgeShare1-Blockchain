@@ -1,0 +1,40 @@
+╔══════════════════════════════════════════════════════════════╗
+║     GlobalNext Blockchain Session - Quick Start Guide        ║
+╚══════════════════════════════════════════════════════════════╝
+
+📋 BEFORE YOU START:
+   ✓ Make sure Node.js is installed (download from nodejs.org)
+   ✓ You have an internet connection (for first-time setup)
+
+🚀 TO START THE PRESENTATION:
+
+   Option 1: Double-click "start-presentation.bat"
+   - This will automatically:
+     * Check if Node.js is installed
+     * Install all dependencies
+     * Start the server
+     * Open your browser
+
+   Option 2: For offline use
+   - Double-click "start-presentation-offline.bat"
+   - This builds a production version that works offline
+
+⌨️  KEYBOARD CONTROLS:
+   → Next Slide: Enter, Space, →, Page Down
+   ← Previous: ←, Page Up
+   🏠 First Slide: Home
+   🏁 Last Slide: End
+
+🌐 URL:
+   Development: http://localhost:5173
+   Preview: http://localhost:4173
+
+❓ TROUBLESHOOTING:
+   • "Node.js not found" → Install from nodejs.org
+   • "Port in use" → Close other apps using port 5173
+   • Slow first run → Normal, dependencies installing
+
+💡 TIP: After first run, dependencies are cached.
+        Subsequent starts will be much faster!
+
+

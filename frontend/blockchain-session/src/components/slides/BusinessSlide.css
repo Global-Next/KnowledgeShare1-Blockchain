@@ -1,0 +1,251 @@
+.business-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(110, 197, 194, 0.1) 0%, rgba(159, 240, 255, 0.08) 100%);
+  color: var(--gn-ink);
+  padding: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.business-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.business-slide .slide-content {
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+}
+
+.business-slide .slide-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #6EC5C2 0%, #C57CA3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.business-slide .slide-subtitle {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 3rem;
+  color: var(--text-muted);
+}
+
+.business-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+  gap: 2rem;
+  position: relative;
+}
+
+/* Money flow animation */
+.business-visual::before {
+  content: '💰';
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.5rem;
+  animation: moneyFlow 4s linear infinite;
+  z-index: 0;
+}
+
+.business-visual::after {
+  content: '📈';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 2rem;
+  animation: growthPulse 2s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes moneyFlow {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(400px) translateY(-100px);
+    opacity: 0;
+  }
+}
+
+@keyframes growthPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.revenue-stream {
+  flex: 1;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(110, 197, 194, 0.2);
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.6s ease-out;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.revenue-stream::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.revenue-stream:hover::before {
+  left: 100%;
+}
+
+.revenue-stream.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.revenue-stream:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(110, 197, 194, 0.2);
+  border-color: rgba(110, 197, 194, 0.4);
+}
+
+.revenue-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.revenue-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--gn-ink);
+}
+
+.revenue-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.business-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+}
+
+.business-item {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(110, 197, 194, 0.2);
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.5s ease-out;
+}
+
+.business-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.business-bullet {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  color: var(--gn-teal);
+}
+
+.business-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--gn-ink);
+}
+
+.growth-indicator {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 1rem;
+  color: var(--gn-teal);
+  font-weight: 600;
+}
+
+.growth-arrow {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .business-slide {
+    padding: 1rem;
+  }
+  
+  .business-slide .slide-title {
+    font-size: 2.5rem;
+  }
+  
+  .business-visual {
+    flex-direction: column;
+  }
+  
+  .business-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .business-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .business-bullet {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+}
