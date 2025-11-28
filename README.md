@@ -44,7 +44,7 @@ This repository is configured for automatic deployment to GitHub Pages.
    git add .
    git commit -m "Initial commit"
    git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+   git remote add origin https://github.com/Global-Next/KnowledgeShare1-Blockchain.git
    git push -u origin main
    ```
 
@@ -62,7 +62,7 @@ This repository is configured for automatic deployment to GitHub Pages.
 
 After deployment, your presentation will be available at:
 ```
-https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/
+https://Global-Next.github.io/KnowledgeShare1-Blockchain/
 ```
 
 ### Manual Deployment
@@ -139,7 +139,7 @@ The built files will be in `frontend/blockchain-session/dist/`
 
 Once deployed to GitHub Pages, share the URL with your team:
 ```
-https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/
+https://Global-Next.github.io/KnowledgeShare1-Blockchain/
 ```
 
 The presentation works on all devices and browsers, making it easy for team members to access from anywhere.
